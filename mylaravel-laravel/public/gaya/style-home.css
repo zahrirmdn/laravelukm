@@ -1,0 +1,18 @@
+.garis {
+    position: relative;
+    width: 0;
+    height: 100px; /* Atur tinggi garis */
+    border-left: 2px solid black; /* Atur warna dan ketebalan garis */
+    margin: 0 auto; /* Atur margin untuk memposisikan garis di tengah */
+  }
+  
+
+  .garris {
+    position: relative;
+    width: 0;
+    height: 100px; /* Atur tinggi garis */
+    border-left: 2px solid black; /* Atur warna dan ketebalan garis */
+    margin: 0 auto; /* Atur margin untuk memposisikan garis di tengah */
+  }
+  
+  
