@@ -22,15 +22,18 @@ class TiketController extends Controller
     public function store(Request $request)
     {
         dd($request->all());
-        DB::table('tikets')->insert([
-            'jenis_tiket' => $request->jenis_tiket,
-            'harga' => $request->harga,
-            'nama_tiket' => $request->nama_tiket,
-            'event_id' => $request->event_id,
-            'pemesanan_id' => $request->pemesanan_id
-        ]);
+        // DB::table('tikets')->insert([
+        //     'jenis_tiket' => $request->jenis_tiket,
+        //     'harga' => $request->harga,
+        //     'nama_tiket' => $request->nama_tiket,
+        //     'event_id' => $request->event_id,
+        //     'pemesanan_id' => $request->pemesanan_id
+        // ]);
 
-        return redirect('/pembayaran/bayar')->with('success', 'Pemesanan berhasil disimpan.');
+        // return redirect('/pemesanan/bayar')->with('success', 'Pemesanan berhasil disimpan.');
+        // return redirect()->route('pemesanan.bayar')->with('success', 'Pemesanan berhasil disimpan.');
+
+        // dd($request->id());
     }
 
     /**

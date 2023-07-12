@@ -1,9 +1,11 @@
 
 <title>Halaman Tiket</title>
 
-<form action="/tiket" method="post">
+<form action="/pemesanan/tiket" method="post">
 
 @csrf
+
+
 
 <input class="form-control form-control-lg" type="boolean" placeholder="vip/vvip" name="jenis_tiket">
 <br>

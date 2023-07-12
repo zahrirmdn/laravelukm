@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\PemesananController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\TiketController;
@@ -45,12 +46,14 @@ Route::get('/event',[EventController::class,'__invoke']);
 Route::get('/pesan', [PemesananController::class, 'create']);
 // Route::post('/pemesanan', [PemesananController::class, 'create']);
 
-Route::post('/pemesanan', [PemesananController::class, 'store']);
+// Route::post('/pemesanan', [PemesananController::class, 'store']);
 
 Route::get('/pemesanan/tiket', [TiketController::class, 'index']);
 Route::post('/pemesanan/tiket', [TiketController::class, 'store']);
 
+Route::get('/pemesanan/bayar', [PembayaranController::class, 'index']);
 
+Route::post('/pemesanan/bayar', [PembayaranController::class, 'store']);
 
 
 
