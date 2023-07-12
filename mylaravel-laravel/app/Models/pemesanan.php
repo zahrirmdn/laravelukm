@@ -13,4 +13,12 @@ class pemesanan extends Model
         'tglpesan',
         'total_pesanan',
     ];
+
+    protected $guarded = ['id'];
+
+    public function tikets()
+{
+    return $this->hasMany(Tiket::class);
+}
+
 }

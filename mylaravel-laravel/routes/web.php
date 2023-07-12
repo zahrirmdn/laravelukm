@@ -44,16 +44,17 @@ Route::get('/event',[EventController::class,'__invoke']);
 //     return view('pesan');
 // });
 Route::get('/pesan', [PemesananController::class, 'create']);
+Route::post('/pesan',[PemesananController::class, 'store']);
 // Route::post('/pemesanan', [PemesananController::class, 'create']);
 
 // Route::post('/pemesanan', [PemesananController::class, 'store']);
 
-Route::get('/pemesanan/tiket', [TiketController::class, 'index']);
-Route::post('/pemesanan/tiket', [TiketController::class, 'store']);
+Route::get('/tiket', [TiketController::class, 'index']);
+Route::post('/tiket', [TiketController::class, 'store']);
 
-Route::get('/pemesanan/bayar', [PembayaranController::class, 'index']);
+Route::get('/bayar', [PembayaranController::class, 'index']);
 
-Route::post('/pemesanan/bayar', [PembayaranController::class, 'store']);
+Route::post('/bayar', [PembayaranController::class, 'store']);
 
 
 

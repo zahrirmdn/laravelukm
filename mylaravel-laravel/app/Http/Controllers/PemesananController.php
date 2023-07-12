@@ -20,7 +20,7 @@ class PemesananController extends Controller
     {
         //  $events = DB::table('events')->get();
         //  $events = Event::all(); // Mengambil semua data event dari database
-         return view('pemesanan/pesan', [
+         return view('pesan', [
              'events' => Event::all()
          ]);
         // Validasi data yang diterima dari permintaan
@@ -52,7 +52,7 @@ class PemesananController extends Controller
         'total_pesanan' => $validatedData['total_pesanan'],
     ]);
 
-    return redirect('/pemesanan/tiket')->with('success', 'Pemesanan berhasil disimpan.');
+    return redirect('/tiket')->with('success', 'Pemesanan berhasil disimpan.');
 }
 
 

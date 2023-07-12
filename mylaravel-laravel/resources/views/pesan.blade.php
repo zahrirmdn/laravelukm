@@ -7,7 +7,7 @@
 
 <!-- create.blade.php -->
 
-<form action="/pemesanan" method="post">
+<form action="/pesan" method="post">
     @csrf
 
     {{-- @foreach ($events as $event) --}}

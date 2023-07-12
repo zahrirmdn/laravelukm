@@ -13,7 +13,9 @@ class PembayaranController extends Controller
      */
     public function index()
     {
-        return view('pemesanan.bayar');
+        return view('bayar',[
+            'pembayarans' => Pembayaran::all()
+        ]);
     }
 
     /**

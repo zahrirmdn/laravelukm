@@ -1,7 +1,7 @@
 
 <title>Halaman Tiket</title>
 
-<form action="/pemesanan/tiket" method="post">
+<form action="/tiket" method="post">
 
 @csrf
 
