@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class event extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'nama_event',
+        'tgl_event',
+    ];
+
+    protected $guarded = ['id'];
 }

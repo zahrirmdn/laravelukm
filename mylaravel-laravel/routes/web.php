@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\PemesananController;
+use App\Http\Controllers\StaffController;
+use App\Http\Controllers\TiketController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,3 +34,23 @@ Route::get('/home', function () {
 Route::get('/ofice', function(){
     return view('ofice');
 });
+
+Route::get('/staff', [StaffController::class,'index']);
+
+Route::get('/event',[EventController::class,'__invoke']);
+
+// Route::get('/pesan', function(){
+//     return view('pesan');
+// });
+Route::get('/pesan', [PemesananController::class, 'create']);
+// Route::post('/pemesanan', [PemesananController::class, 'create']);
+
+Route::post('/pemesanan', [PemesananController::class, 'store']);
+
+Route::get('/pemesanan/tiket', [TiketController::class, 'index']);
+Route::post('/pemesanan/tiket', [TiketController::class, 'store']);
+
+
+
+
+

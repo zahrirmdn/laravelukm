@@ -14,11 +14,9 @@ return new class extends Migration
         Schema::create('mahasiswas', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->unsignedBigInteger('akun_id');
-            $table->foreign('akun_id')->references('id')->on('akuns');
             $table->string('nama_mhs',30);
             $table->char('nim',9)->unique();
-            $table->string('mail_mhs',30)->unique()->nullable();
+            $table->boolean('mail_mhs',true)->unique(); // jika false brarti admin
             $table->string('telp_mhs',13)->unique();
         });
     }

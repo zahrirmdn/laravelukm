@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class tiket extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'jenis_tiket',
+        'harga',
+        'nama_tiket',
+        'event_id',
+        'pemesanan_id'
+    ];
 }

@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class detil_pesan extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'mahasiswa_id',
+        'pemesanan_id'
+    ];
+
 }

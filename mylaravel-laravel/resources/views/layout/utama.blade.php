@@ -23,16 +23,16 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" href='/profil'>Event</a>
+          <a class="nav-link active" href='/event'>Event</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href='/sejarah'>Achievement</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href='/visi-misi'>get your ticket</a>
+            <a class="nav-link" href="{{ url('/pesan') }}">get your ticket</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href='/staf'>Our staff</a>
+          <a class="nav-link" href='/staff'>Our staff</a>
         </li>
       </ul>
     </div>

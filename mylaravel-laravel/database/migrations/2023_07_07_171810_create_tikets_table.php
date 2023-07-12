@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tikets', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->boolean('jenis_tiket')->default(false);
+            $table->boolean('jenis_tiket')->default(false);//false sg murah
             $table->integer('harga');
             $table->string('nama_tiket',30);
             $table->unsignedBigInteger('event_id');

@@ -14,11 +14,9 @@ return new class extends Migration
         Schema::create('admins', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->unsignedBigInteger('akun_id');
-            $table->foreign('akun_id')->references('id')->on('akuns');
             $table->string('nama_admin',30);
             $table->string('telp_admin',13);
-            $table->string('mail_admin',30)->unique();
+            $table->boolean('isadmin',false); // jika true berarti admin
         });
     }
 
