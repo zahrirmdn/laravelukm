@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="gaya/style-welcome.css">
 </head>
 <body>
+    <div class="isi">
     <h3>SELAMAT DATANG</h3>
-    <a href='/login'>
-        <img src="gambar/ukmsepak.jpeg" alt="ukm">
-    </a>
+        <a href='/login'>
+            <img src="gambar/ukmsepak.jpeg" alt="ukm">
+        </a>
+    </div>
 </body>
 </html>
