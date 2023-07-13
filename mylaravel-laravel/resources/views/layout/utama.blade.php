@@ -47,8 +47,8 @@
           <div class="garisdua"></div>
           <img src="gambar/ukmsepak.jpeg" alt="uk" width="100" height="100">
           <p>Universitas Airlangga</p>
-          <p>ukm sepak bola 1981</p>
-          <p>merr road</p>
+          <p>UKM Sepak Bola 1981</p>
+          <p>MERR road</p>
           <p>Surabaya</p>
       </div>
       <div class="tengah">
