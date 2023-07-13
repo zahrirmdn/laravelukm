@@ -14,15 +14,20 @@ return new class extends Migration
         Schema::create('tikets', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->boolean('jenis_tiket')->default(false);//false sg murah
-            $table->integer('harga');
-            $table->string('nama_tiket',30);
+            $table->enum('jenis_tiket', ['vip', 'vvip']);
+            $table->unsignedBigInteger('harga');
+            $table->string('nama_tiket', 30);
             $table->unsignedBigInteger('event_id');
             $table->foreign('event_id')->references('id')->on('events');
             $table->unsignedBigInteger('pemesanan_id');
             $table->foreign('pemesanan_id')->references('id')->on('pemesanans');
         });
     }
+
+
+
+
+
 
     /**
      * Reverse the migrations.

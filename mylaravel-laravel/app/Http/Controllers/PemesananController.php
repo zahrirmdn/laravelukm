@@ -2,79 +2,47 @@
 
 namespace App\Http\Controllers;
 
-
-use App\Models\pemesanan;
+use App\Models\Pemesanan;
 use App\Models\Event;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class PemesananController extends Controller
 {
+    /**
+     * Show the form for creating a new pemesanan.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('pesan', [
+            'events' => Event::all()
+        ]);
+    }
+
     /**
      * Store a newly created pemesanan in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //  $events = DB::table('events')->get();
-        //  $events = Event::all(); // Mengambil semua data event dari database
-         return view('pesan', [
-             'events' => Event::all()
-         ]);
-        // Validasi data yang diterima dari permintaan
-        // $validatedData = $request->validate([
-        //     'tglpesan' => 'required|date',
-        //     'total_pesanan' => 'required|integer',
-        // ]);
-
-        // Membuat entri baru di tabel pemesanan
-        // $pemesanan = pemesanan::create($validatedData);
-
-        // // Mengembalikan respon sukses
-        // return response()->json(['message' => 'Pemesanan berhasil dibuat', 'data' => $pemesanan], 201);
-    }
-
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
-{
-    $validatedData = $request->validate([
-        'tglpesan' => 'required|date',
-        'total_pesanan' => 'required|numeric',
-    ]);
+    {
+        $validatedData = $request->validate([
+            'tglpesan' => 'required|date',
+            'total_pesanan' => 'required|numeric',
+        ]);
 
-    DB::table('pemesanans')->insert([
-        'tglpesan' => $validatedData['tglpesan'],
-        'total_pesanan' => $validatedData['total_pesanan'],
-    ]);
+        Pemesanan::create($validatedData);
 
-    return redirect('/tiket')->with('success', 'Pemesanan berhasil disimpan.');
-}
-
-
-        // dd('submited');
-    // Validasi input
-    // $validatedData = $request->validate([
-    //     'event_id' => 'required',
-    //     'tglpesan' => 'required|date',
-    //     'total_pesanan' => 'required|numeric',
-    // ]);
-
-
-    //     // Simpan data ke database
-    //     Pemesanan::create($validatedData);
-
-    //     // Redirect ke halaman lain setelah penyimpanan berhasil
-    //     return redirect('/pemesanan')->with('success', 'Pemesanan berhasil disimpan.');
-
-
+        return redirect('/tiket')->with('success', 'Pemesanan berhasil disimpan.');
+    }
 
     /**
      * Display the specified resource.
+     *
+     * @param  string  $id
+     * @return \Illuminate\Http\Response
      */
     public function show(string $id)
     {
@@ -83,6 +51,10 @@ class PemesananController extends Controller
 
     /**
      * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  string  $id
+     * @return \Illuminate\Http\Response
      */
     public function update(Request $request, string $id)
     {
@@ -91,6 +63,9 @@ class PemesananController extends Controller
 
     /**
      * Remove the specified resource from storage.
+     *
+     * @param  string  $id
+     * @return \Illuminate\Http\Response
      */
     public function destroy(string $id)
     {

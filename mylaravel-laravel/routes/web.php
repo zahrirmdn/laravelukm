@@ -57,4 +57,3 @@ Route::get('/bayar', [PembayaranController::class, 'index']);
 Route::post('/bayar', [PembayaranController::class, 'store']);
 
 
-
