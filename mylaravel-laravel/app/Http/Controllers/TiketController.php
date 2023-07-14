@@ -42,7 +42,7 @@ class TiketController extends Controller
 
         Tiket::create($validatedData);
 
-        return redirect('/tiket')->with('success', 'Tiket berhasil disimpan.');
+        return redirect('/bayar')->with('success', 'Tiket berhasil disimpan.');
     }
 
     /**

@@ -21,4 +21,8 @@ class pemesanan extends Model
     return $this->hasMany(Tiket::class);
 }
 
+    public function pembayarans(){
+        return $this->hasOne(Pembayaran::class);
+    }
+
 }

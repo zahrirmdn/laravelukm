@@ -14,11 +14,14 @@ class PemesananController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('pesan', [
-            'events' => Event::all()
-        ]);
-    }
+{
+    $pemesanans = Pemesanan::all();
+    return view('pesan', [
+        'events' => Event::all(),
+        'pemesanans' => $pemesanans
+    ]);
+}
+
 
     /**
      * Store a newly created pemesanan in storage.

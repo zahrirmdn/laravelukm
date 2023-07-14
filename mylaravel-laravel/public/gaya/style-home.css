@@ -5,7 +5,7 @@
     border-left: 2px solid black; /* Atur warna dan ketebalan garis */
     margin: 0 auto; /* Atur margin untuk memposisikan garis di tengah */
   }
-  
+
 
   .garris {
     position: relative;
@@ -14,5 +14,39 @@
     border-left: 2px solid black; /* Atur warna dan ketebalan garis */
     margin: 0 auto; /* Atur margin untuk memposisikan garis di tengah */
   }
-  
-  
+
+   .row {
+    margin-top: 70px;
+    width: 100%;
+    height: 100px;
+  }
+
+
+  .container {
+    text-align: center;
+  }
+
+  .row {
+    display: flex;
+    justify-content: center;
+  }
+
+  .col {
+    width: 33.33%;
+    background-color: blue;
+  }
+
+  .col a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: white;
+    text-decoration: none;
+  }
+
+  .overflow-scroll{
+    margin-top: 100px;
+  }
+
+

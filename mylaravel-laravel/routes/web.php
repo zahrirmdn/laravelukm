@@ -36,6 +36,10 @@ Route::get('/ofice', function(){
     return view('ofice');
 });
 
+Route::get('/achv', function(){
+    return view('achv');
+});
+
 Route::get('/staff', [StaffController::class,'index']);
 
 Route::get('/event',[EventController::class,'__invoke']);

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\pembayaran;
 use App\Models\pemesanan;
+use App\Models\Tiket;
 use Illuminate\Http\Request;
 
 class PembayaranController extends Controller
@@ -13,9 +14,20 @@ class PembayaranController extends Controller
      */
     public function index()
     {
-        return view('bayar',[
-            'pembayarans' => Pembayaran::all()
-        ]);
+        $pembayarans = pembayaran::all();
+        return view('bayar', compact('pembayarans'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        $pemesanans = Pemesanan::all();
+        return view('bayar', compact('pemesanans'));
+
+        $tikets = Tiket::all();
+        return view('bayar', compact('tikets'));
     }
 
     /**
@@ -23,30 +35,26 @@ class PembayaranController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'tgl_pembayaran' => 'required|date',
+            'total_bayar' => 'required|integer',
+            'pemesanan_id' => 'required|integer|exists:pemesanans,id',
+            'tiket_id' => 'required|integer|exists:pemesanans,id',
+        ]);
+
+        Pembayaran::create($validatedData);
+
+        return redirect('/home')->with('success', 'Pembayaran berhasil disimpan.');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(pembayaran $pembayaran)
+    public function show($id)
     {
-        //
+        // $tiket = Tiket::findOrFail($id);
+        // return view('tiket.show', compact('tiket'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, pembayaran $pembayaran)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(pembayaran $pembayaran)
-    {
-        //
-    }
+    // Other methods: update(), destroy(), etc.
 }

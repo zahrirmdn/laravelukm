@@ -30,6 +30,24 @@
         <button type="submit" style="text-align: center">Submit</button>
     </div>
 
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>tanggal pesan</th>
+                <th>total pesanan</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($pemesanans as $pesan)
+                <tr>
+                    <td>{{ $pesan->id }}</td>
+                    <td>{{ $pesan->tglpesan }}</td>
+                    <td>{{ $pesan->total_pesanan }}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 
 </form>
 @endsection

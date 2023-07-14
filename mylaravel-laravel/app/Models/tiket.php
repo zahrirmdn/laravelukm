@@ -28,4 +28,8 @@ class tiket extends Model
         return $this->belongsTo(pemesanan::class);
     }
 
+    public function pembayarans(){
+        return $this->hasMany(Pembayaran::class);
+    }
+
 }
