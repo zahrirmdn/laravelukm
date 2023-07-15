@@ -49,6 +49,8 @@ Route::get('/event',[EventController::class,'__invoke']);
 // });
 Route::get('/pesan', [PemesananController::class, 'create']);
 Route::post('/pesan',[PemesananController::class, 'store']);
+Route::delete('/pesan', [PemesananController::class, 'destroy']);
+
 // Route::post('/pemesanan', [PemesananController::class, 'create']);
 
 // Route::post('/pemesanan', [PemesananController::class, 'store']);

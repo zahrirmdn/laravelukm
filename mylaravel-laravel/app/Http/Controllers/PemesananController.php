@@ -70,8 +70,12 @@ class PemesananController extends Controller
      * @param  string  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(string $id)
+    public function destroy(Request $request)
     {
-        //
+        $id = $request->input('id');
+        $pesan = Pemesanan::findOrFail($id);
+        $pesan->delete();
+
+        return redirect('/pesan')->with('success', 'Pemesanan berhasil dihapus.');
     }
 }
