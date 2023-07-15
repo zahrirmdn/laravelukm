@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="gaya/style-home.css">
     <link rel="stylesheet" href="gaya/style-achv.css">
     <link rel="stylesheet" href="gaya/style-staff.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-xxx" crossorigin="anonymous" />
+
 </head>
 <body>
   <div class="awak">
