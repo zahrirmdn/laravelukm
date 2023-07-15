@@ -31,7 +31,7 @@
         <img src="gambar/FUTSAL.JPG" class="d-block w-10" alt="tengah" width="80%" height="600px" style="margin-left: 100px">
       </div>
       <div class="carousel-item">
-        <img src="gambar/bareng.jpg" class="d-block w-10" alt="akhir" width="80%" height="600px" style="margin-left: 100px">
+        <img src="gambar/bareng.jpg" class="d-block w-10" alt="akhir" width="50%" height="600px" style="margin-left: 100px">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
