@@ -38,6 +38,15 @@
                     <td>{{ $pembayaran->total_bayar }}</td>
                     <td>{{ $pembayaran->pemesanan_id }}</td>
                     <td>{{ $pembayaran->tiket_id }}</td>
+                    <td>
+                        <form action="/pesan" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <input type="hidden" name="id" value="{{ $pembayaran->id }}">
+                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda Yakin?')">Delete</button>
+                            <a href="/pesan/{{ $pembayaran->id }}/edit" class="btn btn-sm btn-primary">Edit</a>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

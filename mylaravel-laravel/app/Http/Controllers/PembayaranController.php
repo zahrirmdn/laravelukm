@@ -57,4 +57,28 @@ class PembayaranController extends Controller
     }
 
     // Other methods: update(), destroy(), etc.
+
+    public function destroy(Request $request)
+{
+    $id = $request->input('id');
+    $pembayaran = Pembayaran::findOrFail($id);
+
+    // Menghapus terlebih dahulu entri Tiket terkait
+    $tiket = Tiket::find($pembayaran->tiket_id);
+    if ($tiket) {
+        $tiket->delete();
+    }
+
+    // Menghapus entri Pemesanan terkait
+    $pemesanan = Pemesanan::find($pembayaran->pemesanan_id);
+    if ($pemesanan) {
+        $pemesanan->delete();
+    }
+
+    // Menghapus entri Pembayaran
+    $pembayaran->delete();
+
+    return redirect('/bayar')->with('success', 'Pembayaran berhasil dihapus.');
+}
+
 }

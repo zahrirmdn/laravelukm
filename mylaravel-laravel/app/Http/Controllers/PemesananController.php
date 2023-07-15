@@ -74,6 +74,10 @@ class PemesananController extends Controller
     {
         $id = $request->input('id');
         $pesan = Pemesanan::findOrFail($id);
+
+        $pesan->tikets()->delete();
+        $pesan->pembayarans()->delete();
+
         $pesan->delete();
 
         return redirect('/pesan')->with('success', 'Pemesanan berhasil dihapus.');

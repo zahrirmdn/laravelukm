@@ -57,9 +57,10 @@ Route::delete('/pesan', [PemesananController::class, 'destroy']);
 
 Route::get('/tiket', [TiketController::class, 'index']);
 Route::post('/tiket', [TiketController::class, 'store']);
+Route::delete('/tiket', [TiketController::class, 'destroy']);
 
 Route::get('/bayar', [PembayaranController::class, 'index']);
-
 Route::post('/bayar', [PembayaranController::class, 'store']);
+Route::delete('/bayar', [PembayaranController::class, 'destroy']);
 
 

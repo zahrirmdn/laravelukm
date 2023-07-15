@@ -40,6 +40,15 @@
                     <td>{{ $tiket->harga }}</td>
                     <td>{{ $tiket->nama_tiket }}</td>
                     <td>{{ $tiket->pemesanan_id }}</td>
+                    <td>
+                        <form action="/pesan" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <input type="hidden" name="id" value="{{ $tiket->id }}">
+                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda Yakin?')">Delete</button>
+                            <a href="/pesan/{{ $tiket->id }}/edit" class="btn btn-sm btn-primary">Edit</a>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

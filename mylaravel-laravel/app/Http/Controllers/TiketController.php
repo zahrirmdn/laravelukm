@@ -55,4 +55,16 @@ class TiketController extends Controller
     }
 
     // Other methods: update(), destroy(), etc.
+
+    public function destroy(Request $request)
+    {
+        $id = $request->input('id');
+        $tiket = Tiket::findOrFail($id);
+
+        $tiket->pembayarans()->delete();
+
+        $tiket->delete();
+
+        return redirect('tiket.index')->with('success', 'Pemesanan berhasil dihapus.');
+    }
 }
