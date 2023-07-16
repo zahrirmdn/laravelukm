@@ -1,80 +1,155 @@
-img[alt="ukm"]{
-    margin-left: 30px;
-    margin-right: 30px;
-}
 
-img[alt="uk"]{
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    background-color: #aca407;
+    padding: 2px;
+    color: #ffffff;
+    margin-top: auto;
+  }
+  
+  .header-logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-logo img {
+    height: 170px;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+  
+  .header-navigation {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .header-navigation a {
+    color: #ffffff;
     margin-left: 20px;
-    margin-bottom: 20px;
-    vertical-align: middle;
+    text-decoration: none;
+  }
+
+body {
+font-family: Arial, sans-serif;
+background-color: #f2f2f2;
+margin: 0;
+padding: 0;
 }
 
-/* Mengatur tampilan dan posisi footer */
-footer{
-    margin-top: 900px;
-    background-color: cadetblue;
-    position: fixed;
-    bottom: 0;
+.hero-section {
+background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url('FUTSAL\ unair.jpg');
+background-size: cover;
+background-position: center;
+color: #ffffff;
+text-align: center;
+padding: 200px 0;
 }
 
-.foter .tengah h4{
-    margin-top: 100px;
-    margin-bottom: 20px;
+.hero-section h1 {
+font-size: 48px;
+margin-bottom: 20px;
 }
 
-.foter .tengah ul{
-    margin-bottom: 30px;
+.hero-section p {
+font-size: 24px;
+margin-bottom: 40px;
 }
 
-.foter {
-    background-color: blanchedalmond;
-    box-sizing: border-box;
-    width: 100%;
-    text-align: left;
-    padding: 50px 50px 60px 50px;
-    margin-top: 50px;
+.cta-button {
+display: inline-block;
+background-color: #034694;
+color: #ffffff;
+font-size: 18px;
+padding: 10px 20px;
+text-decoration: none;
+border-radius: 5px;
 }
 
-
-.foter .kiri,
-.foter .tengah,
-.foter .kanan{
-    display: inline-block;
-    vertical-align: top;
+.content-section {
+max-width: 800px;
+margin: 0 auto;
+padding: 40px;
+text-align: center;
 }
 
-@media (max-height:800px){
-    footer{
-        position: static ;
-    }
+.content-section h2 {
+font-size: 36px;
+margin-bottom: 20px;
 }
 
-.foter .kiri{
-    width: 80px;
+.content-section p {
+font-size: 18px;
+line-height: 1.5;
+margin-bottom: 30px;
 }
 
-.foter .tengah{
-    width: 35%;
-    height: 30%;
-    margin-left: 250px;
+footer {
+  background-color: #1c1c1c;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
 }
 
-.foter .kiri .garis{
-    border-left: 6px solid black;
-    height: 370px;
-    position: absolute;
-    left: 20%;
-
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.foter .kiri .garisdua{
-    border-left: 6px solid black;
-    height: 370px;
-    position: absolute;
-    left: 50%;
+.footer-column {
+  flex: 1 0 300px;
 }
 
-.foter .kanan{
-    margin-top: 100px;
-    width: 30%;
+h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
 }
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-icons li {
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icons li a {
+  color: #1c1c1c;
+}
+
+.social-icons li a:hover {
+  color: #fff;
+  background-color: #1c1c1c;
+}
+
