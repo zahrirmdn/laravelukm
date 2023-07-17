@@ -61,6 +61,7 @@
 </head>
 <body>
 <main>
+    <h2>halo</h2>
     <header>
         <img src="gambar/unair_horizontal.png" alt="Unair logo">
     </header>
@@ -70,21 +71,21 @@
             <div class="col-md-5">
                 <div class="card card-header">Login Your Account</div>
                 <div class="card-body">
-                    <form action="{{ route('login') }}" method="post">
+                    <form action="{{ route('logina') }}" method="post">
                         @csrf
                         <div class="mb-4">
-                            <label for="mail_mhs" class="form-label">Email</label>
-                            <input type="text" name="mail_mhs" id="mail_mhs" value="{{ old('mail_mhs') }}" class="form-control">
-                            @error("mail_mhs")
+                            <label for="nama_admin" class="form-label">Username</label>
+                            <input type="text" name="nama_admin" id="nama_admin" value="{{ old("nama_admin") }}" class="form-control">
+                            @error("nama_admin")
                             <div class="text-danger mt-2">
                                 {{ $message }}
                             </div>
                             @enderror
                         </div>
                         <div class="mb-4">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" name="password" id="password" class="form-control">
-                            @error("password")
+                            <label for="pass" class="form-label">Password</label>
+                            <input type="password" name="pass" id="pass" class="form-control">
+                            @error("pass")
                             <div class="text-danger mt-2">
                                 {{ $message }}
                             </div>

@@ -6,6 +6,7 @@ use App\Http\Controllers\PemesananController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\TiketController;
 use App\Http\Controllers\RegisController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,6 +42,10 @@ Route::get('/achv', function(){
     return view('achv');
 });
 
+Route::get('/logina', function(){
+    return view('logina');
+});
+
 Route::get('/staff', [StaffController::class,'index']);
 
 Route::get('/event',[EventController::class,'__invoke']);
@@ -66,5 +71,12 @@ Route::put('/tampildatabayar/{id}', [PembayaranController::class, 'update']);
 
 Route::get('register', [RegisController::class, 'create'])->name('register');
 Route::post('register', [RegisController::class, 'store'])->name('register');
+Route::get('registera',[RegisController::class, 'createadmin'])->name('registera');
+Route::post('registera',[RegisController::class, 'storeadmin'])->name('registera');
+
+Route::get('login',[LoginController::class,'create'])->name('login');
+Route::post('login',[LoginController::class,'store'])->name('login');
+Route::get('logina', [LoginController::class, 'createadmin'])->name('logina');
+Route::post('logina', [LoginController::class, 'storeadmin'])->name('logina');
 
 

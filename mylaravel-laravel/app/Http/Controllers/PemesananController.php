@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pemesanan;
 use App\Models\Event;
+use App\Models\Mahasiswa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,13 +16,17 @@ class PemesananController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-{
-    $pemesanans = Pemesanan::all();
-    return view('pesan', [
-        'events' => Event::all(),
-        'pemesanans' => $pemesanans
-    ]);
-}
+    {
+        $pemesanans = Pemesanan::all();
+        return view('pesan', [
+            'events' => Event::all(),
+            'pemesanans' => $pemesanans
+        ]);
+
+        $mahasiswas = Mahasiswa::all();
+        return view('pesan', compact('mahasiswas'));
+
+    }
 
 
     /**
@@ -35,6 +40,7 @@ class PemesananController extends Controller
         $validatedData = $request->validate([
             'tglpesan' => 'required|date',
             'total_pesanan' => 'required|numeric',
+            'mahasiswa_id' => 'required|numeric'
         ]);
 
         Pemesanan::create($validatedData);

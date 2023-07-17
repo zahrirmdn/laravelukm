@@ -23,7 +23,7 @@ class TiketController extends Controller
  */
 public function create()
 {
-    $pemesanans = Pemesanan::all();
+    $pemesanans = Pemesanan::all(); // kalau dia menerima pasto ada gini
     return view('tiket', compact('pemesanans'));
 }
 

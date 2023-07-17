@@ -16,8 +16,8 @@ return new class extends Migration
             $table->timestamps();
             $table->string('nama_admin',30);
             $table->string('telp_admin',13);
-            $table->boolean('isadmin',false); // jika true berarti admin
-            $table->string('pass',20)->unique();
+            $table->boolean('isadmin',false)->nullable(); // jika true berarti admin
+            $table->string('pass',255)->unique();
         });
     }
 

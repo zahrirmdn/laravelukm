@@ -24,6 +24,8 @@
         <input type="date" name="tglpesan" id="tglpesan">
         <label for="total_pesanan" style="text-align: center">Total Pesanan:</label>
         <input type="number" name="total_pesanan" id="total_pesanan" min="1" max="10">
+        <label for="mahasiswa_id" style="text-align: center">Mahasiswa ID</label>
+        <input type="number" name="mahasiswa_id" id="mahasiswa_id">
         <button type="submit" style="text-align: center">Submit</button>
     </div>
 </form>
@@ -43,6 +45,7 @@
                 <td>{{ $pesan->id }}</td>
                 <td>{{ $pesan->tglpesan }}</td>
                 <td>{{ $pesan->total_pesanan }}</td>
+                <td>{{ $pesan->mahasiswa_id }}</td>
                 <td>
                     <form action="/pesan/delete" method="post">
                         @csrf

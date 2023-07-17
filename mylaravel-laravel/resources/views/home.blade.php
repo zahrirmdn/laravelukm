@@ -3,10 +3,15 @@
 @section('hubung')
 <title>Halaman User</title>
 
+@if (session()->has('sukses'))
+    <div class="alert alert-success" role="alert">
+        {{ session()->get('sukses') }}
+    </div>
+@endif
 <div class="hero-section">
     <h1>Welcome to Our Football Club</h1>
     <p>Experience the thrill of the game with us</p>
-    <a href="#" class="cta-button">Login</a>
+    <a href="/login" class="cta-button">Login</a>
 </div>
 <div class="content-section">
     <h2>About Us</h2>

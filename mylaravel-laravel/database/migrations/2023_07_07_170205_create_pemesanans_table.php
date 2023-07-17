@@ -16,6 +16,8 @@ return new class extends Migration
             $table->timestamps();
             $table->date('tglpesan');
             $table->integer('total_pesanan');
+            $table->unsignedBigInteger('mahasiswa_id');
+            $table->foreign('mahasiswa_id')->references('id')->on('mahasiswas');
         });
     }
 

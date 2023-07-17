@@ -24,6 +24,7 @@
         <a href="{{ url('/pesan') }}">Get Your Ticket</a>
         <a href="/staff">Our Staff</a>
         <a class="nav-link" href="{{ route('register') }}">Daftar </a>
+        <a class="nav-link" href="{{ route('registera') }}"> admin</a>
     </nav>
 </header>
     <div class="hubung">
