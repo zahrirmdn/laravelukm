@@ -44,23 +44,23 @@ Route::get('/staff', [StaffController::class,'index']);
 
 Route::get('/event',[EventController::class,'__invoke']);
 
-// Route::get('/pesan', function(){
-//     return view('pesan');
-// });
 Route::get('/pesan', [PemesananController::class, 'create']);
 Route::post('/pesan',[PemesananController::class, 'store']);
-Route::delete('/pesan', [PemesananController::class, 'destroy']);
+Route::delete('/pesan/delete', [PemesananController::class, 'destroy']);
+Route::get('/tampildatapesan/{id}/edit', [PemesananController::class, 'edit']);
+Route::put('/tampildatapesan/{id}', [PemesananController::class, 'update']);
 
-// Route::post('/pemesanan', [PemesananController::class, 'create']);
-
-// Route::post('/pemesanan', [PemesananController::class, 'store']);
 
 Route::get('/tiket', [TiketController::class, 'index']);
 Route::post('/tiket', [TiketController::class, 'store']);
-Route::delete('/tiket', [TiketController::class, 'destroy']);
+Route::delete('/tiket/delete', [TiketController::class, 'destroy']);
+Route::get('/tampildatatiket/{id}/edit', [TiketController::class, 'edit']);
+Route::put('/tampildatatiket/{id}', [TiketController::class, 'update']);
 
 Route::get('/bayar', [PembayaranController::class, 'index']);
 Route::post('/bayar', [PembayaranController::class, 'store']);
-Route::delete('/bayar', [PembayaranController::class, 'destroy']);
+Route::delete('/bayar/delete', [PembayaranController::class, 'destroy']);
+Route::get('/tampildatabayar/{id}/edit', [PembayaranController::class, 'edit']);
+Route::put('/tampildatabayar/{id}', [PembayaranController::class, 'update']);
 
 

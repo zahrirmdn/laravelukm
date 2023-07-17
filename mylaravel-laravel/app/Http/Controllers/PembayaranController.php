@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\pembayaran;
-use App\Models\pemesanan;
+use App\Models\Pemesanan;
 use App\Models\Tiket;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PembayaranController extends Controller
 {
@@ -42,7 +43,7 @@ class PembayaranController extends Controller
             'tiket_id' => 'required|integer|exists:pemesanans,id',
         ]);
 
-        Pembayaran::create($validatedData);
+        pembayaran::create($validatedData);
 
         return redirect('/home')->with('success', 'Pembayaran berhasil disimpan.');
     }
@@ -50,35 +51,40 @@ class PembayaranController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function edit($id)
     {
-        // $tiket = Tiket::findOrFail($id);
-        // return view('tiket.show', compact('tiket'));
+        $pembayaran = DB::table('pembayarans')->where('id',$id)->first();
+        return view('tampildatabayar', ['pembayaran' => $pembayaran]);
     }
 
-    // Other methods: update(), destroy(), etc.
+    public function update(Request $request, $id)
+    {
+
+        DB::table('pembayarans')->where('id',$id)->update(['tgl_pembayaran' => $request->tgl_pembayaran, 'total_bayar' => $request->total_bayar]);
+        return redirect('/bayar');
+    }
+
 
     public function destroy(Request $request)
-{
-    $id = $request->input('id');
-    $pembayaran = Pembayaran::findOrFail($id);
+    {
+        $id = $request->input('id');
+        $pembayaran = pembayaran::findOrFail($id);
 
-    // Menghapus terlebih dahulu entri Tiket terkait
-    $tiket = Tiket::find($pembayaran->tiket_id);
-    if ($tiket) {
-        $tiket->delete();
+        // Menghapus terlebih dahulu entri Tiket terkait
+        $tiket = Tiket::find($pembayaran->tiket_id);
+        if ($tiket) {
+            $tiket->delete();
+        }
+
+        // Menghapus entri Pemesanan terkait
+        $pemesanan = Pemesanan::find($pembayaran->pemesanan_id);
+        if ($pemesanan) {
+            $pemesanan->delete();
+        }
+
+        // Menghapus entri Pembayaran
+        $pembayaran->delete();
+
+        return redirect('/bayar')->with('success', 'Pembayaran berhasil dihapus.');
     }
-
-    // Menghapus entri Pemesanan terkait
-    $pemesanan = Pemesanan::find($pembayaran->pemesanan_id);
-    if ($pemesanan) {
-        $pemesanan->delete();
-    }
-
-    // Menghapus entri Pembayaran
-    $pembayaran->delete();
-
-    return redirect('/bayar')->with('success', 'Pembayaran berhasil dihapus.');
-}
-
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pemesanan;
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PemesananController extends Controller
 {
@@ -47,22 +48,33 @@ class PemesananController extends Controller
      * @param  string  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(string $id)
+    // public function edit($id)
+    // {
+    //     $pemesanan = Pemesanan::findOrFail($id);
+    //     return view('pemesanan.edit', compact('pemesanan'));
+    // }
+
+    public function edit($id)
     {
-        //
+        $pemesanan = DB::table('pemesanans')->where('id',$id)->first();
+        return view('tampildatapesan', ['pemesanan' => $pemesanan]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  string  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+
+        DB::table('pemesanans')->where('id',$id)->update(['tglpesan' => $request->tglpesan, 'total_pesanan' => $request->total_pesanan]);
+        return redirect('/pesan');
+        // $validatedData = $request->validate([
+        //     'tglpesan' => 'required|date',
+        //     'total_pesanan' => 'required|numeric',
+        // ]);
+
+        // $pemesanans = Pemesanan::findOrFail($id);
+        // $pemesanans->update($validatedData);
     }
+
+
 
     /**
      * Remove the specified resource from storage.
