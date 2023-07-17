@@ -13,6 +13,7 @@ class admin extends Model
         'nama_admin',
         'telp_admin',
         'isadmin',
+        'pass'
     ];
 
     protected $guarded = ['id'];

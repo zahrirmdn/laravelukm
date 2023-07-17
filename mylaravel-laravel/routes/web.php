@@ -5,6 +5,7 @@ use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\PemesananController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\TiketController;
+use App\Http\Controllers\RegisController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -62,5 +63,8 @@ Route::post('/bayar', [PembayaranController::class, 'store']);
 Route::delete('/bayar/delete', [PembayaranController::class, 'destroy']);
 Route::get('/tampildatabayar/{id}/edit', [PembayaranController::class, 'edit']);
 Route::put('/tampildatabayar/{id}', [PembayaranController::class, 'update']);
+
+Route::get('register', [RegisController::class, 'create'])->name('register');
+Route::post('register', [RegisController::class, 'store'])->name('register');
 
 

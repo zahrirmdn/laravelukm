@@ -16,8 +16,9 @@ return new class extends Migration
             $table->timestamps();
             $table->string('nama_mhs',30);
             $table->char('nim',9)->unique();
-            $table->boolean('mail_mhs',true)->unique(); // jika false brarti admin
+            $table->string('mail_mhs',30)->unique(); // jika false brarti admin
             $table->string('telp_mhs',13)->unique();
+            $table->string('password',255)->unique();
         });
     }
 
