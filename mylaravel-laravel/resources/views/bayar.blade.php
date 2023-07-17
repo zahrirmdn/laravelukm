@@ -19,7 +19,7 @@
         <br>
         <input class="form-control form-control-sm" type="number" placeholder="tiket id berapa" name="tiket_id">
         <button type="submit" style="text-align: center">Submit</button>
-        </form>
+    </form>
     <table>
         <thead>
             <tr>
@@ -39,12 +39,12 @@
                     <td>{{ $pembayaran->pemesanan_id }}</td>
                     <td>{{ $pembayaran->tiket_id }}</td>
                     <td>
-                        <form action="/pesan" method="post">
+                        <form action="/bayar/delete" method="post">
                             @csrf
                             @method('DELETE')
                             <input type="hidden" name="id" value="{{ $pembayaran->id }}">
                             <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda Yakin?')">Delete</button>
-                            <a href="/pesan/{{ $pembayaran->id }}/edit" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="/tampildatabayar/{{ $pembayaran->id }}/edit" class="btn btn-sm btn-primary">Edit</a>
                         </form>
                     </td>
                 </tr>

@@ -15,17 +15,18 @@ class TiketController extends Controller
     public function index()
     {
         $tikets = Tiket::all();
-        return view('tiket.index', compact('tikets'));
+        return view('tiket', compact('tikets'));
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        $pemesanans = Pemesanan::all();
-        return view('tiket.index', compact('pemesanans'));
-    }
+ * Show the form for creating a new resource.
+ */
+public function create()
+{
+    $pemesanans = Pemesanan::all();
+    return view('tiket', compact('pemesanans'));
+}
+
 
     /**
      * Store a newly created resource in storage.
@@ -36,7 +37,7 @@ class TiketController extends Controller
             'jenis_tiket' => 'required|string|in:vip,vvip',
             'harga' => 'required|numeric',
             'nama_tiket' => 'required|string',
-            'event_id' => 'required|integer|exists:pemesanans,id',
+            'event_id' => 'required|integer|exists:events,id',
             'pemesanan_id' => 'required|integer|exists:pemesanans,id',
         ]);
 
@@ -48,23 +49,28 @@ class TiketController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function edit($id)
     {
-        // $tiket = Tiket::findOrFail($id);
-        // return view('tiket.show', compact('tiket'));
+        $tiket = DB::table('tikets')->where('id',$id)->first();
+        return view('tampildatatiket', ['tiket' => $tiket]);
     }
 
-    // Other methods: update(), destroy(), etc.
+    public function update(Request $request, $id)
+    {
+
+        DB::table('tikets')->where('id',$id)->update(['jenis_tiket' => $request->jenis_tiket, 'harga' => $request->harga, 'nama_tiket' => $request->nama_tiket]);
+        return redirect('/tiket');
+
+    }
+
 
     public function destroy(Request $request)
     {
         $id = $request->input('id');
         $tiket = Tiket::findOrFail($id);
 
-        $tiket->pembayarans()->delete();
-
         $tiket->delete();
 
-        return redirect('tiket.index')->with('success', 'Pemesanan berhasil dihapus.');
+        return redirect('/tiket')->with('success', 'Tiket berhasil dihapus.');
     }
 }
