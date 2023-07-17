@@ -44,9 +44,9 @@
       <div class="footer-column">
         <h4>Contact</h4>
         <ul>
-          <li>Email: info@chelseafc.com</li>
-          <li>Phone: +1 234 567 890</li>
-          <li>Address: 123 Main Street, London</li>
+          <li>Email: info@ukmsbunair.com</li>
+          <li>Phone: +62 812 3456 7890</li>
+          <li>Address: 123 Merr Street, Surabaya</li>
         </ul>
       </div>
       <div class="footer-column">

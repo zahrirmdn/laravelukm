@@ -10,6 +10,11 @@ body {
     color: #ffffff;
     margin-top: auto;
   }
+
+  .header h1{
+    text-align: start;
+    margin-top: 20px;
+  }
   
   .header-logo {
     display: flex;
@@ -25,12 +30,14 @@ body {
   .header-navigation {
     display: flex;
     justify-content: flex-end;
+    margin-right: 10px;
   }
   
   .header-navigation a {
     color: #ffffff;
     margin-left: 20px;
     text-decoration: none;
+    
   }
 
 body {
