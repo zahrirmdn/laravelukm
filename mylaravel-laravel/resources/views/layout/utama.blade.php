@@ -10,6 +10,32 @@
     <link rel="stylesheet" href="gaya/style-achv.css">
     <link rel="stylesheet" href="gaya/style-staff.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-xxx" crossorigin="anonymous" />
+    <style>
+                .header-navigation {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navbar {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .navbar.kiri li {
+            margin-right: 10px;
+        }
+
+        .navbar.kanan li {
+            margin-left: 10px;
+        }
+
+        .navbar li:last-child {
+            margin-right: 0;
+        }
+
+    </style>
 </head>
 <body>
     <header class="header">
