@@ -10,6 +10,32 @@
     <link rel="stylesheet" href="gaya/style-achv.css">
     <link rel="stylesheet" href="gaya/style-staff.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-xxx" crossorigin="anonymous" />
+    <style>
+                .header-navigation {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navbar {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .navbar.kiri li {
+            margin-right: 10px;
+        }
+
+        .navbar.kanan li {
+            margin-left: 10px;
+        }
+
+        .navbar li:last-child {
+            margin-right: 0;
+        }
+
+    </style>
 </head>
 <body>
     <header class="header">
@@ -17,15 +43,44 @@
         <img src="gambar/logo_UKM_SepakBola.png" alt="Chelsea FC Logo">
         <h1>UKM Sepak Bola<br>Universitas Airlangga</h1>
         </div>
-    <nav class="header-navigation">
-        <a href="/home">Home</a>
-        <a href="/event">Event</a>
-        <a href="/achv">Achievement</a>
-        <a href="{{ url('/pesan') }}">Get Your Ticket</a>
-        <a href="/staff">Our Staff</a>
-        <a class="nav-link" href="{{ route('register') }}">Daftar </a>
-        <a class="nav-link" href="{{ route('registera') }}"> admin</a>
-    </nav>
+        <nav class="header-navigation">
+            <ul class="navbar kiri">
+                <li>
+                    <a href="/home">Home</a>
+                </li>
+                <li>
+                    <a href="/event">Event</a>
+                </li>
+                <li>
+                    <a href="/achv">Achievement</a>
+                </li>
+                <li>
+                    <a href="{{ url('/pesan') }}">Get Your Ticket</a>
+                </li>
+                <li>
+                    <a href="/staff">Our Staff</a>
+                </li>
+            </ul>
+            <ul class="navbar kanan">
+                @guest
+                    <li>
+                        <a class="nav-link" href="{{ route('register') }}">Daftar</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{{ route('registera') }}">Admin</a>
+                    </li>
+                @else
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ Auth::Mahasiswa()->nama_mhs }}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <!-- Dropdown menu items... -->
+                        </ul>
+                    </li>
+                @endguest
+            </ul>
+
 </header>
     <div class="hubung">
         @yield('hubung')
