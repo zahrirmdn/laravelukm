@@ -40,18 +40,47 @@
 <body>
     <header class="header">
         <div class="header-logo">
-        <a href="/home"><img src="gambar/logo_UKM_SepakBola.png" alt="Chelsea FC Logo"></a>
+        <img src="gambar/logo_UKM_SepakBola.png" alt="Chelsea FC Logo">
         <h1>UKM Sepak Bola<br>Universitas Airlangga</h1>
         </div>
-    <nav class="header-navigation">
-        <a href="/home">Home</a>
-        <a href="/event">Event</a>
-        <a href="/achv">Achievement</a>
-        <a href="{{ url('/pesan') }}">Get Your Ticket</a>
-        <a href="/staff">Our Staff</a>
-        <a class="nav-link" href="{{ route('register') }}">Daftar </a>
-        <a class="nav-link" href="{{ route('registera') }}"> Admin</a>
-    </nav>
+        <nav class="header-navigation">
+            <ul class="navbar kiri">
+                <li>
+                    <a href="/home">Home</a>
+                </li>
+                <li>
+                    <a href="/event">Event</a>
+                </li>
+                <li>
+                    <a href="/achv">Achievement</a>
+                </li>
+                <li>
+                    <a href="{{ url('/pesan') }}">Get Your Ticket</a>
+                </li>
+                <li>
+                    <a href="/staff">Our Staff</a>
+                </li>
+            </ul>
+            <ul class="navbar kanan">
+                @guest
+                    <li>
+                        <a class="nav-link" href="{{ route('register') }}">Daftar</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{{ route('registera') }}">Admin</a>
+                    </li>
+                @else
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ Auth::Mahasiswa()->nama_mhs }}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <!-- Dropdown menu items... -->
+                        </ul>
+                    </li>
+                @endguest
+            </ul>
+
 </header>
     <div class="hubung">
         @yield('hubung')
