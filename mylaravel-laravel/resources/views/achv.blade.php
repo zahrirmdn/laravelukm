@@ -1,4 +1,4 @@
-<!-- resources/views/tiket/index.blade.php -->
+pgp<!-- resources/views/tiket/index.blade.php -->
 
 @extends('layout.utama')
 

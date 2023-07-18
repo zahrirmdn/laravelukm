@@ -14,7 +14,7 @@
 <body>
     <header class="header">
         <div class="header-logo">
-        <img src="gambar/logo_UKM_SepakBola.png" alt="Chelsea FC Logo">
+        <a href="/home"><img src="gambar/logo_UKM_SepakBola.png" alt="Chelsea FC Logo"></a>
         <h1>UKM Sepak Bola<br>Universitas Airlangga</h1>
         </div>
     <nav class="header-navigation">
@@ -24,7 +24,7 @@
         <a href="{{ url('/pesan') }}">Get Your Ticket</a>
         <a href="/staff">Our Staff</a>
         <a class="nav-link" href="{{ route('register') }}">Daftar </a>
-        <a class="nav-link" href="{{ route('registera') }}"> admin</a>
+        <a class="nav-link" href="{{ route('registera') }}"> Admin</a>
     </nav>
 </header>
     <div class="hubung">

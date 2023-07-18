@@ -1,3 +1,55 @@
+.hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url('FUTSAL\ unair.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 200px 0;
+}
+
+    .hero-section h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+    .hero-section p {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.hero-section a{
+    background-color: blue;
+    transition: background-color 0,9s ease;
+}
+
+.hero-section a:hover{
+    background-color: #ffffff;
+    cursor: pointer;
+    color: black;
+}
+
+.content-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    text-align: center;
+    }
+
+    .content-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    }
+
+    .content-section p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    }
+
+.container img{
+    height: 400px;
+}
+
 .garis {
     position: relative;
     width: 0;
@@ -7,71 +59,41 @@
   }
 
 
-  .garris {
+.garris {
     position: relative;
     width: 0;
     height: 100px; /* Atur tinggi garis */
     border-left: 2px solid black; /* Atur warna dan ketebalan garis */
     margin: 0 auto; /* Atur margin untuk memposisikan garis di tengah */
-  }
+}
 
-   .row {
+.row {
     margin-top: 70px;
     width: 100%;
     height: 100px;
-  }
+}
 
 
-  .container {
+.container {
     text-align: center;
-  }
+}
 
-  .row {
+.row {
     display: flex;
     justify-content: center;
-  }
+}
 
-  .col {
+.col {
     width: 33.33%;
     background-color: blue;
-  }
+}
 
-  .col a {
+.col a {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     color: white;
     text-decoration: none;
-  }
-
-  .overflow-scroll{
-    margin-top: 100px;
-  }
-
-  aside {
-    width: 600px;
-    overflow: hidden;
-    margin-top: 50px;
 }
-
-.aside-content {
-    height: 200px;
-    width: 600px;
-    border: 1px solid black;
-    overflow-y: scroll;
-    padding: 10px;
-}
-
-img[alt="aku"]{
-    margin-top: 100px;
-    margin-left: 100px;
-    margin-bottom: 100px;
-}
-
-.containerrr{
-    margin-bottom: 450px;
-}
-
-
 
