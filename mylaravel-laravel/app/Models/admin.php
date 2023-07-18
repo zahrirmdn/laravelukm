@@ -14,7 +14,10 @@ class admin extends Model implements Authenticatable
 
     protected $fillable = [
         'nama_admin',
+        'nia',
         'telp_admin',
+        'role',
+        'mail_admin',
         'pass'
     ];
 

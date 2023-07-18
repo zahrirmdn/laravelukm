@@ -1,3 +1,8 @@
+<?php
+
+use Illuminate\Support\Facades\Auth;
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,25 +66,30 @@
                     <a href="/staff">Our Staff</a>
                 </li>
             </ul>
-            <ul class="navbar kanan">
-                @guest
-                    <li>
+            @if(!Auth::check())
+            <div class="navbar">
+                <ul class="navbar kanan">
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('register') }}">Daftar</a>
                     </li>
-                    <li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('registera') }}">Admin</a>
                     </li>
-                @else
-                    <li class="dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            {{ Auth::Mahasiswa()->nama_mhs }}
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <!-- Dropdown menu items... -->
-                        </ul>
-                    </li>
-                @endguest
-            </ul>
+                </ul>
+            </div>
+            @else
+            <div class="dropdown">
+                <li class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <!-- Dropdown menu items... -->
+                    </ul>
+                </li>
+            </div>
+        @endif
+
 
 </header>
     <div class="hubung">

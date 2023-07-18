@@ -18,9 +18,36 @@
                         @enderror
                     </div>
                     <div class="mb-4">
-                        <label for='"telp_admin"' class="form-label">Telp</label>
+                        <label for="nia" class="form-label">NIA</label>
+                        <input type="text" name="nia" id="nia" class="form-control">
+                        @error("nia")
+                            <div class="text-danger mt-2">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-4">
+                        <label for="telp_admin" class="form-label">Telp</label>
                         <input type="text" name="telp_admin" id="telp_admin" class="form-control">
                         @error("telp_admin")
+                            <div class="text-danger mt-2">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-4">
+                        <label for="role" class="form-label">Role</label>
+                        <input type="" name="role" id="role" class="form-control" placeholder="mhs / admin">
+                        @error("role")
+                            <div class="text-danger mt-2">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-4">
+                        <label for="mail_admin" class="form-label">Email</label>
+                        <input type="text" name="mail_admin" id="mail_admin" class="form-control">
+                        @error("mail_admin")
                             <div class="text-danger mt-2">
                                 {{ $message }}
                             </div>

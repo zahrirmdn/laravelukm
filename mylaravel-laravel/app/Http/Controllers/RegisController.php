@@ -19,18 +19,22 @@ class RegisController extends Controller
     public function storeadmin(Request $request){
         $request->validate([
             'nama_admin' => ['required', 'alpha_num', 'string', 'min:3', 'max:20'],
+            'nia' => ['required', 'string', 'size:9'],
+            'mail_admin' => ['required', 'email'],
             'telp_admin' => ['required', 'string', 'min:11', 'max:13'],
             'pass' => ['required', 'min:3', 'max:255']
         ]);
 
-        $admin = Admin::where('nama_admin', $request->nama_admin)->orWhere('pass', $request->pass)->first();
+        $admin = Admin::where('mail_admin', $request->mail_admin)->orWhere('telp_admin', $request->telp_admin)->orWhere('pass', $request->pass)->first();
         if($admin){
             return dd('user sudah ada tolong cari yang lain');
         }
 
         Admin::create([
             'nama_admin' => $request->nama_admin,
+            'nia' => $request->nia,
             'telp_admin' => $request->telp_admin,
+            'mail_admin' => $request->mail_admin,
             'pass' => Hash::make($request->pass)
         ]);
 

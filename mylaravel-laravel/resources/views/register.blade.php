@@ -36,6 +36,15 @@
                         @enderror
                     </div>
                     <div class="mb-4">
+                        <label for="role" class="form-label">Role</label>
+                        <input type="" name="role" id="role" class="form-control" placeholder="mhs / admin">
+                        @error("role")
+                            <div class="text-danger mt-2">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-4">
                         <label for="telp_mhs" class="form-label">Telp</label>
                         <input type="text" name="telp_mhs" id="telp_mhs" class="form-control">
                         @error("telp_mhs")

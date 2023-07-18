@@ -21,6 +21,7 @@ class Mahasiswa extends Model implements Authenticatable
         'nama_mhs',
         'nim',
         'mail_mhs',
+        'role',
         'telp_mhs',
         'password'
     ];

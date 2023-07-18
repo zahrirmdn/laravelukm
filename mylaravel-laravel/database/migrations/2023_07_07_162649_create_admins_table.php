@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('nama_admin',30);
+            $table->char('nia',9)->unique();
             $table->string('telp_admin',13);
-            $table->boolean('isadmin',false)->nullable(); // jika true berarti admin
+            $table->enum('role', ['mahasiswa', 'admin']);
+            $table->string('mail_admin',30);
             $table->string('pass',255)->unique();
         });
     }

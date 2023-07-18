@@ -73,6 +73,11 @@ Route::get('register', [RegisController::class, 'create'])->name('register');
 Route::post('register', [RegisController::class, 'store'])->name('register');
 Route::get('registera',[RegisController::class, 'createadmin'])->name('registera');
 Route::post('registera',[RegisController::class, 'storeadmin'])->name('registera');
+// Definisikan rute pendaftaran
+Route::get('/register', [RegisController::class, 'create'])->name('register');
+Route::post('/register', [RegisController::class, 'store'])->name('register.store');
+Route::post('/registera', [RegisController::class, 'storeadmin'])->name('registera');
+
 
 Route::get('login',[LoginController::class,'create'])->name('login');
 Route::post('login',[LoginController::class,'store'])->name('login');
