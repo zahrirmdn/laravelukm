@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Auth;
     <link rel="stylesheet" href="gaya/style-staff.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-xxx" crossorigin="anonymous" />
     <style>
-                .header-navigation {
+            .header-navigation {
             display: flex;
             justify-content: space-between;
         }
@@ -70,7 +70,7 @@ use Illuminate\Support\Facades\Auth;
                 <ul class="navbar kanan">
                     @if(!Auth::check())
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">Daftar</a>
+                        <a class="nav-link" href="{{ route('register') }}">Sign in</a>
                     </li>
                     @else
                     {{-- <li class="nav-item">
@@ -83,7 +83,7 @@ use Illuminate\Support\Facades\Auth;
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <form action="/logout" method="post">
                                     @csrf
-                                    <button type="submit" class="dropdown-item"><i class="bibi-box-arrow-right"></i>Keluar</button>
+                                    <button type="submit" class="dropdown-item"><i class="bibi-box-arrow-right"></i>Log out</button>
                                 </form>
                             </ul>
                         </li>
@@ -105,10 +105,10 @@ use Illuminate\Support\Facades\Auth;
       <div class="footer-column">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">News</a></li>
-          <li><a href="#">Fixtures</a></li>
-          <li><a href="#">Results</a></li>
+          <li><a href="/home">Home</a></li>
+          <li><a href="/event">Event</a></li>
+          <li><a href="/achv">Achievement</a></li>
+          <li><a href="/tiket">Ticket</a></li>
         </ul>
       </div>
       <div class="footer-column">
@@ -122,10 +122,10 @@ use Illuminate\Support\Facades\Auth;
       <div class="footer-column">
         <h4>Follow Us</h4>
         <ul class="social-icons">
-          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-          <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+          <li><a href="https://www.instagram.com/ukmsepakbolaunair/?hl=id"><img src="gambar/instagram.png" alt="ig"></a></li>
+          <li><a href="https://www.youtube.com/@ukmsepakbolaunair5613"><img src="gambar/youtube.png" alt="youtube"></a></li>
+          <li><a href="#"><img src="gambar/facebook.png" alt="fb"></a></li>
+          <li><a href="#"><img src="gambar/twitter.png" alt="twitter"></a></li>
         </ul>
       </div>
     </div>

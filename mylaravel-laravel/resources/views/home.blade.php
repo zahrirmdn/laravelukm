@@ -54,13 +54,13 @@
 <div class="biru">
     <div class="row">
         <div class="col">
-            <a href="https://youtu.be/Q1XofoHKifw">Perasaan saat masuk final sebuah lomba</a>
+            <a href="https://youtu.be/Q1XofoHKifw">Perasaan Saat Masuk Final Sebuah Lomba</a>
         </div>
         <div class="col">
-            <a href="https://youtu.be/q3we3BDPU3E">Wajah-wajah kepengurusan baru</a>
+            <a href="https://youtu.be/q3we3BDPU3E">Wajah-Wajah Kepengurusan Baru</a>
         </div>
         <div class="col">
-            <a href="https://youtube.com/shorts/3mWzhAn1GKI?feature=share">Bentuk dukungan ke sebuah organisasi</a>
+            <a href="https://youtube.com/shorts/3mWzhAn1GKI?feature=share">Bentuk Dukungan ke Sebuah Organisasi</a>
         </div>
     </div>
 </div>
