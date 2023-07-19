@@ -47,13 +47,15 @@
                 <td>{{ $pesan->total_pesanan }}</td>
                 <td>{{ $pesan->mahasiswa_id }}</td>
                 <td>
-                    <form action="/pesan/delete" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <input type="hidden" name="id" value="{{ $pesan->id }}">
-                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda Yakin?')">Delete</button>
-                        <a href="/tampildatapesan/{{ $pesan->id }}/edit" class="btn btn-sm btn-primary">Edit</a>
-                    </form>
+                    @if (auth()->user()->role=="mahasiswa")
+                        <form action="/pesan/delete" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <input type="hidden" name="id" value="{{ $pesan->id }}">
+                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda Yakin?')">Delete</button>
+                            <a href="/tampildatapesan/{{ $pesan->id }}/edit" class="btn btn-sm btn-primary">Edit</a>
+                        </form>
+                    @endif
                 </td>
             </tr>
         @endforeach

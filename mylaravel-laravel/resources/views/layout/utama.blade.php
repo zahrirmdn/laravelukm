@@ -53,9 +53,9 @@ use Illuminate\Support\Facades\Auth;
                 <li>
                     <a href="/home">Home</a>
                 </li>
-                <li>
-                    <a href="/event">Event</a>
-                </li>
+                    <li>
+                        <a href="/event">Event</a>
+                    </li>
                 <li>
                     <a href="/achv">Achievement</a>
                 </li>
@@ -66,29 +66,32 @@ use Illuminate\Support\Facades\Auth;
                     <a href="/staff">Our Staff</a>
                 </li>
             </ul>
-            @if(!Auth::check())
             <div class="navbar">
                 <ul class="navbar kanan">
+                    @if(!Auth::check())
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('register') }}">Daftar</a>
                     </li>
-                    <li class="nav-item">
+                    @else
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="{{ route('registera') }}">Admin</a>
-                    </li>
+                    </li> --}}
+                        <li class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {{ Auth::user()->nama_mhs }}
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <form action="/logout" method="post">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item"><i class="bibi-box-arrow-right"></i>Keluar</button>
+                                </form>
+                            </ul>
+                        </li>
+                    @endif
                 </ul>
             </div>
-            @else
-            <div class="dropdown">
-                <li class="dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <!-- Dropdown menu items... -->
-                    </ul>
-                </li>
-            </div>
-        @endif
+
+
 
 
 </header>

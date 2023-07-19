@@ -37,7 +37,10 @@
                     </div>
                     <div class="mb-4">
                         <label for="role" class="form-label">Role</label>
-                        <input type="" name="role" id="role" class="form-control" placeholder="mhs / admin">
+                        <select name="role" id="role" class="form-select">
+                            <option value="mhs">Mahasiswa</option>
+                            <option value="admin">Admin</option>
+                        </select>
                         @error("role")
                             <div class="text-danger mt-2">
                                 {{ $message }}

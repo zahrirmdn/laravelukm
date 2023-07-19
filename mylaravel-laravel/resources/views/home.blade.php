@@ -11,20 +11,26 @@
 <div class="hero-section">
     <h1>Welcome to Our Football Club</h1>
     <p>Experience the thrill of the game with us</p>
-    <a href="/login" class="cta-button">Login</a>
+    @guest
+        <a href="/login" class="cta-button">Login</a>
+    @endguest
 </div>
-    <div class="content-section">
-    <h2>About Us</h2>
-    <img src="gambar/hzw.jpg" alt="Hamid Zuhdi">
-        <div class="container">
-            <p>Selamat datang di Website Resmi Kumpulan Sepak Bola! Kami dengan bangga mempersembahkan platform ini kepada Anda, para pecinta sepak bola sejati. Website ini didedikasikan untuk memberikan pengalaman yang tak terlupakan dalam menjelajahi dunia sepak bola. Di sini, Anda akan menemukan berbagai informasi terkini tentang kompetisi, tim, pemain, jadwal pertandingan, berita terbaru, dan banyak lagi</p>
-            <p>Kami berkomitmen untuk memberikan konten berkualitas tinggi yang menginformasikan, menghibur, dan memperdalam pengetahuan anda tentang sepak bola. Melalui desain yang modern dan user-friendly, kami mengundang anda untuk menjelajahi setiap halaman, mengeksplorasi beragam fitur, dan berinteraksi dengan sesama penggemar sepak bola.</p>
-            <p>Dapatkan akses langsung ke video highlight, foto, dan statistik terbaru yang akan membuat Anda tetap terhubung dengan aksi di lapangan. Website resmi Kumpulan Sepak Bola juga menyediakan kesempatan bagi Anda untuk berpartisipasi secara aktif. Anda dapat memberikan komentar, berbagi pendapat, dan berinteraksi dengan komunitas kami. Kami percaya bahwa diskusi dan perspektif yang beragam akan memperkaya pengalaman sepak bola Anda.</p>
-            <p>Terakhir, kami ingin mengucapkan terima kasih kepada seluruh pengunjung yang telah setia mendukung kami. Kami berharap Anda menikmati setiap momen yang kami hadirkan dan mendapatkan kepuasan maksimal dari kunjungan Anda di Website Resmi Kumpulan Sepak Bola.</p><br>
-            <p>Salam Sepak Bola,</p>
-            <p>UKM Sepak Bola UNAIR</p>
+<div class="content-section">
+    <div class="container">
+        <h2>About Us</h2>
+        <div class="row">
+            <div class="col-md-3">
+                <img src="gambar/hzw.jpg" alt="Hamid Zuhdi" width="400" height="800">
+            </div>
+            <div class="col-md-9">
+                <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+                    <h4 id="scrollspyHeading1">Ketua UKMSB</h4>
+                    <p>Selamat datang di Website Resmi Kumpulan Sepak Bola! Kami dengan bangga mempersembahkan platform ini kepada Anda, para pecinta sepak bola sejati. Website ini didedikasikan untuk memberikan pengalaman yang tak terlupakan dalam menjelajahi dunia sepak bola. Di sini, Anda akan menemukan berbagai informasi terkini tentang kompetisi, tim, pemain, jadwal pertandingan, berita terbaru, dan banyak lagi. Kami berkomitmen untuk memberikan konten berkualitas tinggi yang menginformasikan, menghibur, dan memperdalam pengetahuan Anda tentang sepak bola. Melalui desain yang modern dan user-friendly, kami mengundang Anda untuk menjelajahi setiap halaman, mengeksplorasi beragam fitur, dan berinteraksi dengan sesama penggemar sepak bola. Dapatkan akses langsung ke video highlight, foto, dan statistik terbaru yang akan membuat Anda tetap terhubung dengan aksi di lapangan. Website resmi Kumpulan Sepak Bola juga menyediakan kesempatan bagi Anda untuk berpartisipasi secara aktif. Anda dapat memberikan komentar, berbagi pendapat, dan berinteraksi dengan komunitas kami. Kami percaya bahwa diskusi dan perspektif yang beragam akan memperkaya pengalaman sepak bola Anda. Terakhir, kami ingin mengucapkan terima kasih kepada seluruh pengunjung yang telah setia mendukung kami. Kami berharap Anda menikmati setiap momen yang kami hadirkan dan mendapatkan kepuasan maksimal dari kunjungan Anda di Website Resmi Kumpulan Sepak Bola. Salam Sepak Bola UKM Sepak Bola UNAIR</p>
+                </div>
             </div>
         </div>
+    </div>
+</div>
 <script>
     var images = ['gambar/FUTSAL.jpg', 'gambar/sepakbola.jpg','gambar/latihan.jpg']; // Ganti dengan nama file gambar yang ingin digunakan
 
@@ -39,7 +45,7 @@
     setInterval(changeBackgroundImage, 5000); // Ganti dengan durasi perubahan slide yang diinginkan (dalam milidetik)
   </script>
 
-<div class="container text-center">
+<div class="biru">
     <div class="row">
         <div class="col">
             <a href="https://youtu.be/Q1XofoHKifw">Perasaan saat masuk final sebuah lomba</a>

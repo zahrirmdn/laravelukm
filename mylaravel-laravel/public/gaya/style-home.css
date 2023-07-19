@@ -33,6 +33,7 @@
     margin: 0 auto;
     padding: 40px;
     text-align: center;
+    margin-bottom: 100px;
     }
 
     .content-section h2 {
@@ -44,6 +45,7 @@
     font-size: 18px;
     line-height: 1.5;
     margin-bottom: 30px;
+    margin-left: 50px;
     }
 
 .container img{
@@ -97,3 +99,18 @@
     text-decoration: none;
 }
 
+.biru{
+    margin-top: 300px;
+    margin-bottom: 50px;
+}
+
+#scrollspyHeading1 {
+    font-size: 2rem;
+}
+
+.scrollspy-example {
+    width: 500px;
+    max-height: 400px; /* Atur tinggi maksimum sesuai kebutuhan */
+    margin-left: 200px;
+    overflow-y: auto; /* Aktifkan scroll vertikal jika konten melebihi tinggi maksimum */
+}

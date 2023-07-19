@@ -90,7 +90,7 @@
                             </div>
                             @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button type="submit" class="btn btn-primary">Login</button> <a href="/register" style="margin-left: 500px">Create account?</a>
                     </form>
                 </div>
             </div>
