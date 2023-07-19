@@ -8,63 +8,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="gaya/style-login.css">
-    <style>
-        body {
-            font-family: 'Open Sans', sans-serif;
-            padding: 20px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .card {
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-label {
-            font-weight: bold;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .mb-4 {
-            margin-bottom: 20px;
-        }
-
-        .btn-primary {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            background-color: #0069d9;
-        }
-
-        .text-danger {
-            color: #dc3545;
-        }
-    </style>
     <title>Login Ukm</title>
 </head>
 <body>
 <main>
     <header>
-        <img src="gambar/unair_horizontal.png" alt="Unair logo">
+        <div class="logo">
+            <img src="gambar/logo_UKM_Sepakbola.png" alt="UKM logo">
+        </div>
     </header>
-
     <div class="container">
         <div class="row">
             <div class="col-md-5">
@@ -90,7 +42,12 @@
                             </div>
                             @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary">Login</button> <a href="/register" style="margin-left: 500px">Create account?</a>
+                        <div class="create">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                                <div class="account">
+                                    <a href="/register" style="margin-left: 500px"><br>Create Account</a>
+                                </div>
+                        </div>
                     </form>
                 </div>
             </div>
