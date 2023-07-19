@@ -45,7 +45,7 @@ use Illuminate\Support\Facades\Auth;
 <body>
     <header class="header">
         <div class="header-logo">
-        <img src="gambar/logo_UKM_SepakBola.png" alt="Chelsea FC Logo">
+        <a href="/home"><img src="gambar/logo_UKM_SepakBola.png" alt="UKMSB"></a>
         <h1>UKM Sepak Bola<br>Universitas Airlangga</h1>
         </div>
         <nav class="header-navigation">
