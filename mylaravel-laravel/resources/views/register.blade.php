@@ -1,5 +1,13 @@
-
-<title>Halaman Regristasi</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Halaman Regristasi</title>
+    <link rel="stylesheet" href="gaya/style-registerasi.css">
+</head>
+<body>
 
 <div class="container">
     <div class="row">
@@ -65,11 +73,12 @@
                             </div>
                         @enderror
                     </div>
-                    <button type="submit" class="btn btn-primary">save</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
-
+</body>
+</html>
 
