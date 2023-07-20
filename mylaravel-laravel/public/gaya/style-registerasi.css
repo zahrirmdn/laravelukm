@@ -93,7 +93,7 @@ main img {
     opacity: 1;
 }
 
-#buttonLogin{
+.buttonLogin{
     background-color: blue;
     color: #ffffff;
 }
