@@ -57,7 +57,7 @@
                     <div class="mb-4">
                         <label for="role" class="form-label" style="background-color: whitesmoke">Role</label>
                         <select name="role" id="role" class="form-select">
-                            <option value="mhs">Mahasiswa</option>
+                            <option value="mahasiswa">Mahasiswa</option>
                             <option value="admin">Admin</option>
                         </select>
                         @error("role")
