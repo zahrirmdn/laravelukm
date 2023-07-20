@@ -88,16 +88,38 @@ class PemesananController extends Controller
      * @param  string  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
-    {
-        $id = $request->input('id');
-        $pesan = Pemesanan::findOrFail($id);
 
-        $pesan->tikets()->delete();
+
+// ...
+
+public function destroy(Request $request)
+{
+    $id = $request->input('id');
+    $pesan = Pemesanan::findOrFail($id);
+
+    // Mulai transaksi database
+    DB::beginTransaction();
+
+    try {
+        // Hapus pembayaran terkait pemesanan
         $pesan->pembayarans()->delete();
 
+        // Hapus tiket terkait pemesanan
+        $pesan->tikets()->delete();
+
+        // Hapus pemesanan
         $pesan->delete();
 
+        // Commit transaksi jika semua berhasil
+        DB::commit();
+
         return redirect('/pesan')->with('success', 'Pemesanan berhasil dihapus.');
+    } catch (\Exception $e) {
+        // Rollback transaksi jika terjadi kesalahan
+        DB::rollBack();
+
+        return redirect('/pesan')->with('error', 'Gagal menghapus pemesanan.');
     }
+}
+
 }

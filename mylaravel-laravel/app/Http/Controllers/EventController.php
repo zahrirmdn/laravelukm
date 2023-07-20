@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Tiket;
 use App\Models\Pemesanan;
 use App\Models\Event;
 use App\Models\Mahasiswa;
@@ -28,7 +29,7 @@ class EventController extends Controller
      public function index()
      {
          $events = Event::all();
-         return view('event', compact('events'));
+         return view('event',compact('events'));
      }
 
     public function create()
@@ -94,9 +95,20 @@ class EventController extends Controller
         $id = $request->input('id');
         $event = Event::findOrFail($id);
 
+        // Loop melalui tiket terkait
+        foreach ($event->tikets as $tiket) {
+            // Menghapus pembayaran terkait tiket
+            $tiket->pembayarans()->delete();
+        }
+
+        // Menghapus tiket terkait event
         $event->tikets()->delete();
+
+        // Menghapus event
         $event->delete();
 
-        return redirect('/event')->with('success', 'Event berhasil dihapus.');
+        return redirect('/event')->with('success', 'Event berhasil dihapus beserta data tiket dan pembayaran terkait.');
     }
+
+
 }

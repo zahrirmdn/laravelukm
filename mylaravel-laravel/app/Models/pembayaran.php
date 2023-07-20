@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use PhpParser\Node\Expr\FuncCall;
 
-class pembayaran extends Model
+class Pembayaran extends Model
 {
     use HasFactory;
 

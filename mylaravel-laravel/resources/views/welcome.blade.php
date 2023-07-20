@@ -10,7 +10,7 @@
 <body>
     <div class="isi">
     <h3>SELAMAT DATANG</h3>
-        <a href='/login'>
+        <a href='/home'>
             <img src="gambar/ukmsepak.jpeg" alt="ukm">
         </a>
     </div>

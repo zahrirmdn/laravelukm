@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tiket;
 use App\Models\Pemesanan;
+use App\Models\Pembayaran;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -25,6 +26,9 @@ public function create()
 {
     $pemesanans = Pemesanan::all(); // kalau dia menerima pasto ada gini
     return view('tiket', compact('pemesanans'));
+
+    $tikets = Tiket::all(); // kalau dia menerima pasto ada gini
+    return view('tiket', compact('tikets'));
 }
 
 
@@ -69,6 +73,10 @@ public function create()
         $id = $request->input('id');
         $tiket = Tiket::findOrFail($id);
 
+        // Hapus semua pembayaran terkait tiket
+        Pembayaran::where('tiket_id', $id)->delete();
+
+        // Hapus tiket terkait
         $tiket->delete();
 
         return redirect('/tiket')->with('success', 'Tiket berhasil dihapus.');

@@ -29,6 +29,7 @@
         <div id="collapse{{ $event->id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ $event->id }}" data-bs-parent="#accordionExample">
           <div class="accordion-body">
             <p>Tanggal Event: {{ $event->tgl_event }}</p>
+            @if(auth()->user()->role=="mahasiswa")<a href="/pesan">buy here</a>@endif
             {{-- <p>Deskripsi: {{ $event->deskripsi }}</p> --}}
             @if (auth()->user()->role=="admin")
                 <form action="/event/delete" method="post">

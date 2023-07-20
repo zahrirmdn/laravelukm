@@ -1,5 +1,9 @@
 .card {
     width: 500px;
-    height: 200px;
+    height: 410px;
     margin-bottom: 10px;
+}
+
+.edit{
+    margin-bottom: 800px;
 }
