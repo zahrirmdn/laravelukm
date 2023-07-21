@@ -9,10 +9,12 @@ class Pemesanan extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'id';
+
     protected $fillable = [
         'tglpesan',
         'total_pesanan',
-        'mahasiswa_id'
+        'nim'
     ];
 
     protected $guarded = ['id'];

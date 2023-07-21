@@ -40,7 +40,7 @@ class PembayaranController extends Controller
             'tgl_pembayaran' => 'required|date',
             'total_bayar' => 'required|integer',
             'pemesanan_id' => 'required|integer|exists:pemesanans,id',
-            'tiket_id' => 'required|integer|exists:pemesanans,id',
+            'tiket_id' => 'required|integer|exists:tikets,id',
         ]);
 
         pembayaran::create($validatedData);

@@ -16,8 +16,8 @@ return new class extends Migration
             $table->timestamps();
             $table->date('tglpesan');
             $table->integer('total_pesanan');
-            $table->unsignedBigInteger('mahasiswa_id');
-            $table->foreign('mahasiswa_id')->references('id')->on('mahasiswas');
+            $table->char('nim', 9); // Menggunakan kolom 'nim' sebagai foreign key
+            $table->foreign('nim')->references('nim')->on('mahasiswas'); // Mengacu pada kolom 'nim' di tabel 'mahasiswas'
         });
     }
 

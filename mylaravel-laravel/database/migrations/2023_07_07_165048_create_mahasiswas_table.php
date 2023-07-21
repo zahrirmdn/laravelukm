@@ -12,14 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('mahasiswas', function (Blueprint $table) {
-            $table->id();
             $table->timestamps();
-            $table->string('nama_mhs',30);
-            $table->char('nim',9)->unique();
-            $table->string('mail_mhs',30)->unique();
+            $table->string('nama_mhs', 30);
+            $table->char('nim', 9)->primary(); // Menggunakan kolom nim sebagai primary key
+            $table->string('mail_mhs', 30)->unique();
             $table->enum('role', ['mahasiswa', 'admin']);
-            $table->string('telp_mhs',13)->unique();
-            $table->string('password',255)->unique();
+            $table->string('telp_mhs', 13)->unique();
+            $table->string('password', 255)->unique();
         });
     }
 

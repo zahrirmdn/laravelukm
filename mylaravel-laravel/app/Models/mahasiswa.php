@@ -17,9 +17,11 @@ class Mahasiswa extends Model implements Authenticatable
     use AuthenticableTrait;
     use HasFactory;
 
+    protected $primaryKey = 'nim';
+
     protected $fillable = [
-        'nama_mhs',
         'nim',
+        'nama_mhs',
         'mail_mhs',
         'role',
         'telp_mhs',

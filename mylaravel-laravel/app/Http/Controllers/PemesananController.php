@@ -36,17 +36,23 @@ class PemesananController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $validatedData = $request->validate([
-            'tglpesan' => 'required|date',
-            'total_pesanan' => 'required|numeric',
-            'mahasiswa_id' => 'required|numeric'
-        ]);
+{
+    // Validasi data input
+    $validatedData = $request->validate([
+        'tglpesan' => 'required|date',
+        'total_pesanan' => 'required|numeric',
+    ]);
 
-        Pemesanan::create($validatedData);
+    // Ambil nim dari pengguna yang sedang login dan tambahkan ke dalam data yang akan disimpan
+    $validatedData['nim'] = auth()->user()->nim;
 
-        return redirect('/tiket')->with('success', 'Pemesanan berhasil disimpan.');
-    }
+    // Simpan data pemesanan ke dalam tabel
+    Pemesanan::create($validatedData);
+
+    return redirect('/tiket')->with('success', 'Pemesanan berhasil disimpan.');
+}
+
+
 
     /**
      * Display the specified resource.

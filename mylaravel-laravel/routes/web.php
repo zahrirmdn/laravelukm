@@ -83,9 +83,9 @@ Route::post('register', [RegisController::class, 'store'])->name('register')->mi
 // Route::get('registera',[RegisController::class, 'createadmin'])->name('registera');
 // Route::post('registera',[RegisController::class, 'storeadmin'])->name('registera');
 
-Route::get('login',[LoginController::class,'create'])->name('login')->middleware('guest');
-Route::post('login',[LoginController::class,'store'])->name('login')->middleware('guest');
-Route::post('/logout',[LoginController::class, 'logout']);
+Route::get('/login', [LoginController::class, 'create'])->name('login');
+Route::post('/login', [LoginController::class, 'store']);
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 // Route::get('logina', [LoginController::class, 'createadmin'])->name('logina');
 // Route::post('logina', [LoginController::class, 'storeadmin'])->name('logina');
 
