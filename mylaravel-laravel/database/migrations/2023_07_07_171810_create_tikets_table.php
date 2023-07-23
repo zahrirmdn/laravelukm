@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->enum('jenis_tiket', ['vip', 'vvip']);
-            $table->unsignedBigInteger('harga');
             $table->string('nama_tiket', 30);
             $table->unsignedBigInteger('event_id');
             $table->foreign('event_id')->references('id')->on('events');

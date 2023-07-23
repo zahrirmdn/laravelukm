@@ -35,18 +35,28 @@ class PembayaranController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        $validatedData = $request->validate([
-            'tgl_pembayaran' => 'required|date',
-            'total_bayar' => 'required|integer',
-            'pemesanan_id' => 'required|integer|exists:pemesanans,id',
-            'tiket_id' => 'required|integer|exists:tikets,id',
-        ]);
+{
+    $validatedData = $request->validate([
+        'tgl_pembayaran' => 'required|date',
+        'pemesanan_id' => 'required|integer|exists:pemesanans,id',
+        'tiket_id' => 'required|integer|exists:tikets,id',
+    ]);
 
-        pembayaran::create($validatedData);
+    // Dapatkan data tiket berdasarkan tiket_id
+    $tiket = Tiket::findOrFail($request->tiket_id);
 
-        return redirect('/home')->with('success', 'Pembayaran berhasil disimpan.');
-    }
+    // Hitung total bayar berdasarkan harga tiket dari jenis_tiket di tiket dan jumlah tiket
+    $totalBayar = $tiket->harga * $tiket->jumlah_tiket;
+
+    // Tambahkan total_bayar ke dalam $validatedData
+    $validatedData['total_bayar'] = $totalBayar;
+
+    // Simpan data pembayaran ke dalam database menggunakan model Eloquent
+    pembayaran::create($validatedData);
+
+    return redirect('/home')->with('success', 'Pembayaran berhasil disimpan.');
+}
+
 
     /**
      * Display the specified resource.

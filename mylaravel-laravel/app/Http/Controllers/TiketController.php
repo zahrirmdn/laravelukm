@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tiket;
 use App\Models\Pemesanan;
+use App\Models\Event;
 use App\Models\Pembayaran;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -14,10 +15,12 @@ class TiketController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        $tikets = Tiket::all();
-        return view('tiket', compact('tikets'));
-    }
+{
+    $events = Event::all(); // Mengambil semua data event dari database
+    $tikets = Tiket::all(); // Mengambil semua data tiket dari database
+
+    return view('/tiket', compact('events', 'tikets'));
+}
 
     /**
  * Show the form for creating a new resource.
@@ -35,20 +38,37 @@ public function create()
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        $validatedData = $request->validate([
-            'jenis_tiket' => 'required|string|in:vip,vvip',
-            'harga' => 'required|numeric',
-            'nama_tiket' => 'required|string',
-            'event_id' => 'required|integer|exists:events,id',
-            'pemesanan_id' => 'required|integer|exists:pemesanans,id',
-        ]);
+    /**
+ * Store a newly created resource in storage.
+ */
+public function store(Request $request)
+{
+    // Validasi data yang dikirim dari form
+    $request->validate([
+        'jenis_tiket' => ['required', 'in:vip,vvip'], // Hanya menerima vip atau vvip
+        'nama_tiket' => ['required', 'string', 'max:255'],
+        'event_id' => ['required', 'numeric'],
+        'pemesanan_id' => ['required', 'numeric', 'exists:pemesanans,id'], // Pastikan nilai pemesanan_id ada di tabel pemesanans
+    ]);
 
-        Tiket::create($validatedData);
+    // Hitung total bayar berdasarkan jenis tiket dan jumlah tiket
+    $hargaTiket = ($request->jenis_tiket === 'vip') ? 250 : 500;
+    $totalBayar = $hargaTiket * $request->jumlah_tiket;
 
-        return redirect('/bayar')->with('success', 'Tiket berhasil disimpan.');
-    }
+    // Simpan data tiket ke dalam database menggunakan model Eloquent
+    Tiket::create([
+        'jenis_tiket' => $request->jenis_tiket,
+        'nama_tiket' => $request->nama_tiket,
+        'event_id' => $request->event_id,
+        'pemesanan_id' => $request->pemesanan_id,
+        'total_bayar' => $totalBayar, // Simpan total bayar ke dalam database
+    ]);
+
+    // Redirect ke halaman lain setelah berhasil menyimpan data
+    return redirect('/bayar')->with('success', 'Tiket berhasil ditambahkan!');
+}
+
+
 
     /**
      * Display the specified resource.

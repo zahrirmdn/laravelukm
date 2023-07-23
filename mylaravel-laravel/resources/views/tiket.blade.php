@@ -10,11 +10,18 @@
         <h2>hai</h2>
         <input class="form-control form-control-lg" type="enum" placeholder="vip/vvip" name="jenis_tiket">
         <br>
-        <input class="form-control" type="number" placeholder="T:50/F:100" name="harga">
-        <br>
+        {{-- <input class="form-control" type="number" placeholder="T:50/F:100" name="harga">
+        <br> --}}
         <input class="form-control form-control-sm" type="text" placeholder="atas nama" name="nama_tiket">
         <br>
-        <input class="form-control form-control-sm" type="text" placeholder="event id" name="event_id">
+        <label for="event" class="form-label">Event</label>
+    <select class="form-select" name="event_id" id="event_id">
+        <option selected disabled>event id</option>
+        @foreach ($events as $event)
+            <option value="{{$event->id}}">{{$event->nama_event}}</option>
+        @endforeach
+    </select>
+        {{-- <input class="form-control form-control-sm" type="text" placeholder="event id" name="event_id" value="{{ old('event_id') }}"> --}}
         <br>
         <input class="form-control form-control-sm" type="text" placeholder="pemesanan id" name="pemesanan_id">
         {{-- <label for="pemesanan_id">Pemesanan ID:</label>
@@ -27,6 +34,7 @@
         <br>
         <button type="submit" style="text-align: center">Submit</button>
     </form>
+
 
     <table>
         <thead>
