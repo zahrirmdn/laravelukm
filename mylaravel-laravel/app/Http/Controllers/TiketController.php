@@ -82,7 +82,7 @@ public function store(Request $request)
     public function update(Request $request, $id)
     {
 
-        DB::table('tikets')->where('id',$id)->update(['jenis_tiket' => $request->jenis_tiket, 'harga' => $request->harga, 'nama_tiket' => $request->nama_tiket]);
+        DB::table('tikets')->where('id',$id)->update(['jenis_tiket' => $request->jenis_tiket, 'nama_tiket' => $request->nama_tiket]);
         return redirect('/tiket');
 
     }

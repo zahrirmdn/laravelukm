@@ -15,17 +15,11 @@
             <label for="total_bayar_input">Total Bayar</label>
             <input type="text" id="total_bayar_input" name="total_bayar" readonly>
         </div>
-        {{-- <div>
-            <label for="jenis_tiket">Jenis Tiket</label>
-            <select id="jenis_tiket" name="jenis_tiket">
-                <option value="vip">VIP</option>
-                <option value="vvip">VVIP</option>
-            </select>
-        </div> --}}
-        {{-- <div>
-            <label for="jumlah_tiket">Jumlah Tiket</label>
-            <input class="form-control form-control-sm" type="number" placeholder="Jumlah tiket" name="jumlah_tiket" id="jumlah_tiket">
-        </div> --}}
+        {{-- Tambahkan informasi penampil total bayar --}}
+        <div>
+            <label for="total_bayar_info">Total Bayar (Rp)</label>
+            <input type="text" id="total_bayar_info" readonly>
+        </div>
         <br>
         <input class="form-control form-control-sm" type="number" placeholder="pemesanan id berapa?" name="pemesanan_id">
         <br>
@@ -91,6 +85,8 @@
 
             // Tampilkan total bayar pada input
             document.getElementById('total_bayar_input').value = totalBayar;
+            // Tampilkan juga informasi total bayar pada input khusus
+            document.getElementById('total_bayar_info').value = totalBayar;
         }
 
         // Panggil function hitungTotalBayar saat halaman pertama kali dimuat
